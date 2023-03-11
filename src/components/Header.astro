@@ -1,17 +1,18 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../consts";
+import { Icon } from "astro-icon";
 ---
 
 <header class="flex items-center">
-  <h2>
+  <h3>
     <HeaderLink href="/">{SITE_TITLE}</HeaderLink>
-  </h2>
-  <nav class="flex grow justify-end gap-x-5">
+  </h3>
+  <nav class="flex grow items-center justify-end gap-x-10">
     <HeaderLink href="/blog">Blog</HeaderLink>
     <HeaderLink href="/about">About</HeaderLink>
     <HeaderLink href="https://github.com/cammarb" target="_blank">
-      GitHub
+      <Icon name="ri:github-fill" width="25" />
     </HeaderLink>
   </nav>
 </header>

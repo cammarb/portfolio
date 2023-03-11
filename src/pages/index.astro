@@ -4,6 +4,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import Button from "../components/Button.astro";
+import { Icon } from "astro-icon";
 ---
 
 <!DOCTYPE html>
@@ -11,12 +12,19 @@ import Button from "../components/Button.astro";
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
-  <body>
+  <body class="min-h-screen flex flex-col">
     <Header title={SITE_TITLE} />
-    <main>
-      <h1>🐧 Hello, friend!</h1>
-
-      <Button>Click Me</Button>
+    <main
+      class="h-full flex flex-grow place-content-between place-items-center"
+    >
+      <div>
+        <h1 class="font-black">Hello, I'm Camila 🐧</h1>
+        <h2 class="font-black">Frontend Developer.</h2>
+        <Button>Click Me</Button>
+      </div>
+      <div>
+        <Icon name="ic:baseline-laptop-mac" width="200" />
+      </div>
     </main>
     <Footer />
   </body>

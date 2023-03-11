@@ -1,0 +1,30 @@
+@tailwind base;
+
+@layer base {
+  h1 {
+    @apply text-3xl;
+  }
+  h2 {
+    @apply text-2xl;
+  }
+  h3 {
+    @apply text-lg;
+  }
+  code {
+    @apply px-1 px-2 rounded-sm bg-slate-300;
+  }
+}
+
+@tailwind components;
+
+@tailwind utilities;
+
+body {
+  margin: auto;
+  padding: 20px;
+  max-width: 55rem;
+  text-align: left;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.5;
+}
