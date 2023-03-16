@@ -10,8 +10,8 @@
   h3 {
     @apply text-lg;
   }
-  code {
-    @apply px-1 px-2 rounded-sm bg-slate-300;
+  pre {
+    @apply p-4 rounded-sm;
   }
 }
 
