@@ -7,7 +7,7 @@ import cloudflare from "@astrojs/cloudflare";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://example.com",
+  site: "https://cammarb.xyz",
   integrations: [mdx(), sitemap(), tailwind({
     // Example: Disable injecting a basic `base.css` import on every page.
     // Useful if you need to define and/or import your own custom `base.css`.
@@ -16,5 +16,5 @@ export default defineConfig({
     }
   })],
   output: "server",
-  adapter: cloudflare()
+  adapter: cloudflare({ mode: 'directory' })
 });
