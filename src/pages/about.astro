@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/AboutMe.astro';
 import Button from '../components/Button.astro';
+import {Icon} from "astro-icon";
 ---
 
 <Layout
@@ -20,7 +21,10 @@ import Button from '../components/Button.astro';
 	Always with a great disposition to learn, innovate, create.
 </p>
 <br>
-<Button>
-	<a href="https://drive.google.com/file/d/1l6bkdP3v26GdQYF_We_MlgCdsFLKje38/view?usp=share_link" target="_blank">My resume</a>
+<Button class={"animate-bounce"}>
+	<a href="https://drive.google.com/file/d/1l6bkdP3v26GdQYF_We_MlgCdsFLKje38/view?usp=share_link" target="_blank" class="flex">
+		<Icon name="ph:file-pdf" width="25" class="pr-2"></Icon>
+		My resume
+	</a>
 </Button>
 </Layout>
