@@ -4,15 +4,18 @@ import { SITE_TITLE } from "../consts";
 import { Icon } from "astro-icon";
 ---
 
-<header class="flex items-center">
+<header class="flex items-center justify-center flex-wrap mt-1 sm:mt-0">
   <h3>
     <HeaderLink href="/">{SITE_TITLE}</HeaderLink>
   </h3>
-  <nav class="flex grow items-center justify-end gap-x-10">
+  <nav class="flex items-center gap-x-10 mt-4 sm:mt-0 sm:grow sm:justify-end">
     <HeaderLink href="/blog">Blog</HeaderLink>
     <HeaderLink href="/about">About</HeaderLink>
     <HeaderLink href="https://github.com/cammarb" target="_blank">
       <Icon name="ri:github-fill" width="25" />
+    </HeaderLink>
+    <HeaderLink href="https://www.linkedin.com/in/cammarb" target="_blank">
+      <Icon name="mdi:linkedin" width="25" />
     </HeaderLink>
   </nav>
 </header>
