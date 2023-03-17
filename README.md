@@ -2,7 +2,7 @@
 
 Built with [astro🚀](https://astro.build/)
 
-![alt](https://cammarb.xyz/opengraph-image.jpg)
+![Preview image of the website](https://cammarb.xyz/opengraph-image.jpg)
 
 ### How to run it locally?
 
