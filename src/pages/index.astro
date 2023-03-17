@@ -3,11 +3,9 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-import Button from "../components/Button.astro";
+import HomeLinks from "../components/HomeLinks.astro";
 import { Icon } from "astro-icon";
-
-// Import a Code
-import { Content as Code } from "../content/home/code.md";
+import TechStack from "../components/TechStack.astro";
 ---
 
 <!DOCTYPE html>
@@ -18,14 +16,32 @@ import { Content as Code } from "../content/home/code.md";
   <body class="min-h-screen flex flex-col">
     <Header title={SITE_TITLE} />
     <main
-      class="h-full flex flex-grow place-content-between place-items-center"
+    class="h-full flex flex-grow place-content-center place-items-center"
     >
+    <!-- <div class="w-screen min-h-screen fixed top-0 right-0 left-0 -z-10 bg-slate-200 animate-pulse"></div> -->
       <div>
         <h1 class="font-black">Hello, I'm Camila.</h1>
         <h2 class="font-black">Frontend Developer</h2>
-      </div>
-      <div class="w-2/6">
-        <Code />
+        <div class="tech-stack grid grid-rows-3 grid-cols-2 gap-1 mt-4 justify-items-stretch
+        sm:grid-rows-2 sm:grid-cols-4">
+          <p class="col-span-2 sm:col-span-4">Technologies and programming languages:</p>
+          <TechStack>ReactJS</TechStack>
+          <TechStack>Javascript</TechStack>
+          <TechStack>Flask</TechStack>
+          <TechStack>Python</TechStack>
+        </div>
+        <div class="music-links grid grid-flow-row gap-2 mt-8">
+          <p>Check out my music:</p>
+          <HomeLinks href={"https://open.spotify.com/track/7rXGDVMlkU27WjlWgcZbnc?si=a14bba72851b4552"}>
+            <Icon name="mdi:spotify" width="20" class="mr-3"></Icon>
+            Listen to "no time"</HomeLinks>
+          <HomeLinks href={"https://youtu.be/VyVytZmtNmA"}>
+            <Icon name="mdi:youtube" width="20" class="mr-3"></Icon>
+            "no time" Official Music Video</HomeLinks>
+          <HomeLinks href={"https://soundcloud.com/camcanta"}>
+            <Icon name="mdi:soundcloud" width="20" class="mr-3"></Icon>
+            Demos and Covers</HomeLinks>
+        </div>
       </div>
     </main>
     <Footer />
