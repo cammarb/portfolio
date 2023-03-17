@@ -37,16 +37,21 @@ const posts = (await getCollection('blog')).sort(
 		<Header />
 		<main>
 			<section>
-				<ul>
-					{
-						posts.map((post) => (
-							<li>
-								<FormattedDate date={post.data.pubDate} />
-								<a href={`/blog/${post.slug}/`}>{post.data.title}</a>
-							</li>
-						))
-					}
-				</ul>
+				{ posts.length > 0 ? 
+					<ul>
+						{
+							posts.map((post) => (
+								<li>
+									<FormattedDate date={post.data.pubDate} />
+									<a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+								</li>
+							))
+						}
+					</ul> 
+				: 
+					<p class="text-center">No posts yet.</p>
+				}
+				
 			</section>
 		</main>
 		<Footer />
