@@ -10,22 +10,22 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, "");
 ---
 
 <a
-  href={href}
-  class:list={[
-    className,
-    { active: isActive },
-    "py-1 rounded hover:text-emerald-400 hover:underline underline-offset-8",
-  ]}
-  {...props}
+    href={href}
+    class:list={[
+        className,
+        { active: isActive },
+        "py-1 rounded hover:text-emerald-400",
+    ]}
+    {...props}
 >
-  <slot />
+    <slot />
 </a>
 <style>
-  a {
-    display: inline-block;
-    text-decoration: none;
-  }
-  a.active {
-    font-weight: bolder;
-  }
+    a {
+        display: inline-block;
+        text-decoration: none;
+    }
+    a.active {
+        font-weight: bolder;
+    }
 </style>
