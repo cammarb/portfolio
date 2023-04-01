@@ -1,0 +1,58 @@
+---
+import { Icon } from "astro-icon";
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import HeaderLink from "../components/HeaderLink.astro";
+import HomeLinks from "../components/HomeLinks.astro";
+
+const { title, description, image = "/artist-icon.jpg" } = Astro.props;
+---
+
+<html lang="en">
+    <head>
+        <BaseHead title={title} description={description} />
+    </head>
+
+    <body class="min-h-screen flex flex-col">
+        <!-- <Header /> -->
+        <main
+            class="h-full flex flex-col flex-grow place-content-center place-items-center"
+        >
+            <div class="flex align-middle justify-center">
+                <img src={image} alt="" class="rounded-full max-w-[30%]" />
+            </div>
+            <div
+                class="music-links grid grid-flow-row gap-2 my-8 max-w-[80%] sm:max-w-[60%] mx-auto"
+            >
+                <HomeLinks
+                    href={"https://open.spotify.com/track/7rXGDVMlkU27WjlWgcZbnc?si=a14bba72851b4552"}
+                >
+                    <Icon name="mdi:spotify" width="20" class="mr-3" />
+                    "no time" in Spotify
+                </HomeLinks>
+                <HomeLinks
+                    href={"https://music.apple.com/us/album/no-time/1557673169?i=1557673170"}
+                >
+                    <Icon name="mdi:apple" width="20" class="mr-3" />
+                    "no time" in Apple Music
+                </HomeLinks>
+                <HomeLinks href={"https://youtu.be/VyVytZmtNmA"}>
+                    <Icon name="mdi:youtube" width="20" class="mr-3" />
+                    "no time" Official Music Video
+                </HomeLinks>
+                <HomeLinks href={"https://soundcloud.com/camcanta"}>
+                    <Icon name="mdi:soundcloud" width="20" class="mr-3" />
+                    Demos and Covers
+                </HomeLinks>
+            </div>
+            <div class="mt-7">
+                Check out my web development
+                <HeaderLink href={"/"} class={"text-emerald-500 font-bold"}>
+                    portfolio
+                </HeaderLink>
+            </div>
+        </main>
+        <Footer />
+    </body>
+</html>

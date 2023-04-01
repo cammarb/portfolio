@@ -1,57 +1,102 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-import HomeLinks from "../components/HomeLinks.astro";
-import { Icon } from "astro-icon";
-import TechStack from "../components/TechStack.astro";
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import HomeLinks from '../components/HomeLinks.astro';
+import { Icon } from 'astro-icon';
+import TechStack from '../components/TechStack.astro';
+import Button from '../components/Button.astro';
+import { Octokit } from 'octokit';
+
+const octokit = new Octokit({
+  auth: process.env.GITHUB_TOKEN,
+});
+
+const result = await octokit.request('GET /users/cammarb/repos', {
+  user: 'cammarb',
+  sort: 'updated',
+  per_page: 6,
+});
+
+// const repo = {
+//   name: 'amena',
+//   description: 'this is the desciprtion',
+//   updated_at: '2023-03-26T15:17:32Z',
+//   html_url: 'http://website.com',
+// };
 ---
 
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-    </head>
-    <body class="min-h-screen flex flex-col">
-        <Header title={SITE_TITLE} />
-        <main
-            class="h-full flex flex-grow place-content-center place-items-center"
+<html lang='en'>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body class='min-h-screen flex flex-col'>
+    <Header title={SITE_TITLE} />
+    <main
+      class='h-full flex flex-grow flex-col place-content-center place-items-center gap-16 mt-10'
+    >
+      <!-- <div class="w-screen min-h-screen fixed top-0 right-0 left-0 -z-10 bg-slate-200 animate-pulse"></div> -->
+
+      <div>
+        <h1 class='font-black'>Hey, I'm Camila 👋</h1>
+        <h2 class='font-black'>and I'm a Web Developer.</h2>
+        <div
+          class='tech-stack grid grid-rows-3 grid-cols-2 gap-2 mt-4 justify-items-stretch sm:grid-rows-2 sm:grid-cols-4'
         >
-            <!-- <div class="w-screen min-h-screen fixed top-0 right-0 left-0 -z-10 bg-slate-200 animate-pulse"></div> -->
-            <div>
-                <h1 class="font-black">Hey, I'm Camila 👋</h1>
-                <h2 class="font-black">and I'm a Web Developer.</h2>
-                <div
-                    class="tech-stack grid grid-rows-3 grid-cols-2 gap-2 mt-4 justify-items-stretch sm:grid-rows-2 sm:grid-cols-4"
-                >
-                    <p class="self-end mb-1 col-span-2 sm:col-span-4">
-                        Technologies and programming languages:
-                    </p>
-                    <TechStack>ReactJS</TechStack>
-                    <TechStack>Javascript</TechStack>
-                    <TechStack>Flask</TechStack>
-                    <TechStack>Python</TechStack>
+          <p class='self-end mb-1 col-span-2 sm:col-span-4'>
+            Technologies and programming languages:
+          </p>
+          <TechStack>ReactJS</TechStack>
+          <TechStack>Javascript</TechStack>
+          <TechStack>Flask</TechStack>
+          <TechStack>Python</TechStack>
+        </div>
+        <div class='mt-10 flex justify-center'>
+          <a
+            href='https://drive.google.com/file/d/1l6bkdP3v26GdQYF_We_MlgCdsFLKje38/view?usp=share_link'
+            target='_blank'
+          >
+            <Button class={'animate-bounce flex'}>
+              <Icon name='ph:file-pdf' width='25' class='pr-2' />
+              My resume
+            </Button>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h2 class='font-black mb-5'>Projects I'm currently working on</h2>
+        <div class='grid gap-5 grid-cols-1 sm:grid-cols-3'>
+          {
+            result.data.map((repo) => {
+              return (
+                <div class='bg-slate-100 rounded justify-center items-center p-4'>
+                  <p class='font-bold text-lg mb-1'>{repo.name}</p>
+                  <p class='mb-1'>{repo.description}</p>
+                  <a
+                    href={repo.html_url}
+                    class='flex gap-1 text-emerald-400 font-bold mt-1 hover:text-emerald-500'
+                  >
+                    <Icon name='ri:github-fill' width='20' />
+                    GitHub
+                  </a>
+                  <p class='mt-4'>
+                    Last modified on{' '}
+                    {new Date(repo.updated_at).toLocaleString('de-DE', {
+                      day: 'numeric', // numeric, 2-digit
+                      year: 'numeric', // numeric, 2-digit
+                      month: 'long', // numeric, 2-digit, long, short, narro
+                    })}
+                  </p>
                 </div>
-                <div class="music-links grid grid-flow-row gap-2 mt-8">
-                    <p>Check out my music:</p>
-                    <HomeLinks
-                        href={"https://open.spotify.com/track/7rXGDVMlkU27WjlWgcZbnc?si=a14bba72851b4552"}
-                    >
-                        <Icon name="mdi:spotify" width="20" class="mr-3" />
-                        Listen to "no time"
-                    </HomeLinks>
-                    <HomeLinks href={"https://youtu.be/VyVytZmtNmA"}>
-                        <Icon name="mdi:youtube" width="20" class="mr-3" />
-                        "no time" Official Music Video
-                    </HomeLinks>
-                    <HomeLinks href={"https://soundcloud.com/camcanta"}>
-                        <Icon name="mdi:soundcloud" width="20" class="mr-3" />
-                        Demos and Covers
-                    </HomeLinks>
-                </div>
-            </div>
-        </main>
-        <Footer />
-    </body>
+              );
+            })
+          }
+        </div>
+      </div>
+    </main>
+    <Footer />
+  </body>
 </html>
