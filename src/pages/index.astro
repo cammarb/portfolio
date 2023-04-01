@@ -19,6 +19,8 @@ const result = await octokit.request('GET /users/cammarb/repos', {
   per_page: 6,
 });
 
+// console.log(result);
+
 // const repo = {
 //   name: 'amena',
 //   description: 'this is the desciprtion',
@@ -32,14 +34,14 @@ const result = await octokit.request('GET /users/cammarb/repos', {
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
-  <body class='min-h-screen flex flex-col'>
+  <body class='flex flex-col'>
     <Header title={SITE_TITLE} />
     <main
-      class='h-full flex flex-grow flex-col place-content-center place-items-center gap-16 mt-10'
+      class='min-h-screen flex flex-col place-content-center place-items-center gap-16 mt-10'
     >
       <!-- <div class="w-screen min-h-screen fixed top-0 right-0 left-0 -z-10 bg-slate-200 animate-pulse"></div> -->
 
-      <div>
+      <div class='my-10'>
         <h1 class='font-black'>Hey, I'm Camila 👋</h1>
         <h2 class='font-black'>and I'm a Web Developer.</h2>
         <div
@@ -58,7 +60,7 @@ const result = await octokit.request('GET /users/cammarb/repos', {
             href='https://drive.google.com/file/d/1l6bkdP3v26GdQYF_We_MlgCdsFLKje38/view?usp=share_link'
             target='_blank'
           >
-            <Button class={'animate-bounce flex'}>
+            <Button class={'animate-bounce flex items-center'}>
               <Icon name='ph:file-pdf' width='25' class='pr-2' />
               My resume
             </Button>
@@ -66,7 +68,7 @@ const result = await octokit.request('GET /users/cammarb/repos', {
         </div>
       </div>
 
-      <div>
+      <div class='my-5'>
         <h2 class='font-black mb-5'>Projects I'm currently working on</h2>
         <div class='grid gap-5 grid-cols-1 sm:grid-cols-3'>
           {
