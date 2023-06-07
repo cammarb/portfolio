@@ -12,4 +12,4 @@ Built with [React Vite⚡️](https://vitejs.dev/)
 
 `yarn install`
 
-`yarn run dev`
+`yarn dev`
