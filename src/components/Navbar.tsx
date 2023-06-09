@@ -1,4 +1,3 @@
-import { GitHub } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
@@ -6,9 +5,7 @@ export default function Navbar() {
     <>
       <header>
         <nav>
-          <Link to={"https://github.com/cammarb"}>
-            <GitHub />
-          </Link>
+          <Link to={"https://github.com/cammarb"}>Github</Link>
         </nav>
       </header>
     </>
