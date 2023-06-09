@@ -1,14 +1,16 @@
-export default function Navbar(){
+import { GitHub } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 
-  return(
+export default function Navbar() {
+  return (
     <>
-    <header>
-      
-      <nav>
-
-      </nav>
-    </header>
+      <header>
+        <nav>
+          <Link to={"https://github.com/cammarb"}>
+            <GitHub />
+          </Link>
+        </nav>
+      </header>
     </>
-  )
-
+  );
 }
