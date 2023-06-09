@@ -1,7 +1,10 @@
+import { Button } from "@mui/material";
+
 export default function Home() {
   return (
     <>
-      <div>This is the Home Page</div>
+      <p>This is the Home Page</p>
+      <Button variant="contained">click me</Button>
     </>
   );
 }
