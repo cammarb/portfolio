@@ -1,10 +1,10 @@
-import { Button } from "@mui/material";
+import { Button } from '@primer/react'
 
 export default function Home() {
   return (
     <>
-      <p>This is the Home Page</p>
-      <Button variant="contained">click me</Button>
+      <div>Hey, I'm Camila 👋 and I'm a Web Developer. Berlin</div>
+      <Button>this is a button</Button>
     </>
-  );
+  )
 }
