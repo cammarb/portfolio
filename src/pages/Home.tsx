@@ -1,4 +1,4 @@
-import { Button } from '@primer/react'
+import { Button, Pagehead } from '@primer/react'
 
 export default function Home() {
   return (
