@@ -1,3 +1,7 @@
 export default function Music() {
-  return <></>;
+  return (
+    <>
+      <div>This is the music page</div>
+    </>
+  )
 }

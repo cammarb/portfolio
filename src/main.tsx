@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Root from './Root'
 import Home from './pages/Home'
 import { ThemeProvider, BaseStyles } from '@primer/react'
+import Music from './pages/Music'
 
 const router = createBrowserRouter([
   {
@@ -15,13 +16,17 @@ const router = createBrowserRouter([
         element: <Home />,
         index: true,
       },
+      {
+        element: <Music />,
+        path: 'music',
+      },
     ],
   },
 ])
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <ThemeProvider>
+    <ThemeProvider colorMode="auto">
       <BaseStyles>
         <RouterProvider router={router} />
       </BaseStyles>
