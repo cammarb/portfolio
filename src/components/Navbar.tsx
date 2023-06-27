@@ -1,17 +1,17 @@
-import { Heading } from '@primer/react'
+import { CircleOcticon, Header } from '@primer/react'
 import { Link } from 'react-router-dom'
 import { MarkGithubIcon } from '@primer/octicons-react'
 
 export default function Navbar() {
   return (
     <>
-      <Heading sx={{ mb: 2 }} className="">
-        <nav>
-          <Link to={'https://github.com/cammarb'}>
-            <MarkGithubIcon />
+      <Header sx={{ mb: 2 }}>
+        <Header.Item>
+          <Link to="https://github.com/cammarb">
+            <CircleOcticon icon={MarkGithubIcon} size={16} sx={{ mr: 2 }} />
           </Link>
-        </nav>
-      </Heading>
+        </Header.Item>
+      </Header>
     </>
   )
 }
