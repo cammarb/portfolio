@@ -1343,6 +1343,18 @@
   resolved "https://registry.yarnpkg.com/@primer/octicons-react/-/octicons-react-18.3.0.tgz#1b608048fe26e4e66d9f3de1eac8eb82195839f5"
   integrity sha512-kOoc4wrBw3bPe2ZPj9BmCwXdEkw8hxUX/tFCvcjOsZ6eywaQXm3PR0yZnPZxZ8o4RFj2tdg/cwGr4+cU83weHw==
 
+"@primer/octicons-react@^19.3.0":
+  version "19.3.0"
+  resolved "https://registry.yarnpkg.com/@primer/octicons-react/-/octicons-react-19.3.0.tgz#5a420c40145dbecbc0492da8544571d75aa28517"
+  integrity sha512-LCCer1Roc5WGYy5FZcByniuUOJKla7i+9TaPeL95G+KIXhisuyWbTIy5DbiW/EWYMWvfCUQe6u71zZKVNeHjyg==
+
+"@primer/octicons@^19.3.0":
+  version "19.3.0"
+  resolved "https://registry.yarnpkg.com/@primer/octicons/-/octicons-19.3.0.tgz#ae19b675469cbe7d2dfc82057aa890ab340e7e98"
+  integrity sha512-hyIo54VPC3VI7ZyAgosiJcbhxq1gZLbBspZwN9cg1uImRd2E8T9JST3kGeezezJYPjG367FuF7p1L+gmLmeESw==
+  dependencies:
+    object-assign "^4.1.1"
+
 "@primer/primitives@7.11.5":
   version "7.11.5"
   resolved "https://registry.yarnpkg.com/@primer/primitives/-/primitives-7.11.5.tgz#df36599f70d7a8283ce967c17c0e808ecb3984a2"
