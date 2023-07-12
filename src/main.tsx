@@ -6,11 +6,13 @@ import Root from './Root'
 import Home from './pages/Home'
 import { ThemeProvider, BaseStyles } from '@primer/react'
 import Music from './pages/Music'
+import ErrorPage from './pages/ErrorPage'
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Root />,
+    errorElement: <ErrorPage />,
     children: [
       {
         element: <Home />,
