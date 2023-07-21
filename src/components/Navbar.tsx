@@ -1,7 +1,7 @@
 import { CircleOcticon, Header } from '@primer/react'
 import { Link } from 'react-router-dom'
 import { MarkGithubIcon } from '@primer/octicons-react'
-import { LinkedinOriginal, LinkedinPlain } from 'devicons-react'
+import { LinkedinPlain } from 'devicons-react'
 
 export default function Navbar() {
   return (
