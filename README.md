@@ -1,15 +1,15 @@
 # My portfolio website
 
-Built with [astro🚀](https://astro.build/)
+Built with [React Vite⚡️](https://vitejs.dev/)
 
-![Preview image of the website](https://cammarb.xyz/opengraph-image.jpg)
+![Preview image of the website]()
 
 ### How to run it locally?
 
-```git clone https://github.com/cammarb/portfolio.git```
+`git clone https://github.com/cammarb/portfolio.git`
 
-```cd portfolio```
+`cd portfolio`
 
-```yarn install```
+`yarn install`
 
-```yarn astro dev```
+`yarn dev`
