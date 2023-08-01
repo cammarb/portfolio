@@ -7,6 +7,7 @@ import Home from './pages/Home'
 import { ThemeProvider, BaseStyles } from '@primer/react'
 import Music from './pages/Music'
 import ErrorPage from './pages/ErrorPage'
+import { Projects } from './pages/Projects'
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         element: <Music />,
         path: 'music',
+      },
+      {
+        element: <Projects />,
+        path: 'projects',
       },
     ],
   },
