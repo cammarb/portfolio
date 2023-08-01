@@ -1,13 +1,14 @@
 import { Link } from 'react-router-dom'
-import image from '../assets/IMG_0199.png'
+import image from '../assets/no time.jpeg'
 import { ActionList, Avatar, Box } from '@primer/react'
 import { BsApple, BsSpotify, BsYoutube } from 'react-icons/bs'
+import { MdLyrics } from 'react-icons/md'
 import { FaSoundcloud } from 'react-icons/fa'
 
 export default function Music() {
   return (
     <>
-      <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+      <Box sx={{ display: 'flex', flexDirection: 'row' }}>
         <div>
           <Avatar src={image} size={150} />
         </div>
@@ -47,6 +48,15 @@ export default function Music() {
               <FaSoundcloud width="20" sx={{}} />
             </ActionList.LeadingVisual>
             Demos and Covers
+          </ActionList.LinkItem>
+          <ActionList.LinkItem
+            as={Link}
+            to={'https://genius.com/Cam-martinez-no-time-lyrics'}
+          >
+            <ActionList.LeadingVisual>
+              <MdLyrics width="20" sx={{}} />
+            </ActionList.LeadingVisual>
+            Lyrics in Genius
           </ActionList.LinkItem>
         </ActionList>
       </Box>
