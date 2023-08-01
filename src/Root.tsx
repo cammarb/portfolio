@@ -14,11 +14,11 @@ export default function Root() {
   return (
     <>
       <BgColor className="bg-color">
-        <PageLayout sx={{}}>
+        <PageLayout>
           <PageLayout.Header divider="line">
             <Navbar />
           </PageLayout.Header>
-          <PageLayout.Content>
+          <PageLayout.Content sx={{ m: 3 }}>
             <Outlet />
           </PageLayout.Content>
           <PageLayout.Pane position={'start'}>
