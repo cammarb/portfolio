@@ -9,9 +9,9 @@ import styled from 'styled-components'
 function ErrorPage() {
   const BgColor = styled.div`
     background-color: ${themeGet('colors.canvas.default')};
+    min-height: 100vh;
   `
-  const error = useRouteError()
-  console.error(error)
+  const error: any = useRouteError()
   return (
     <BgColor>
       <PageLayout>
@@ -23,7 +23,7 @@ function ErrorPage() {
             <h1>Oops!</h1>
             <p>Sorry, an unexpected error has occurred.</p>
             <p>
-              <i>{error.statusText || error.message}</i>
+              <i>{error?.statusText || error?.message}</i>
             </p>
           </div>
         </PageLayout.Content>
