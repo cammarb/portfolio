@@ -1,4 +1,4 @@
-import { FileIcon, UnmuteIcon } from '@primer/octicons-react'
+import { UnmuteIcon } from '@primer/octicons-react'
 import { Box, TreeView } from '@primer/react'
 import { Link } from 'react-router-dom'
 import { TypescriptPlain } from 'devicons-react'

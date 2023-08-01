@@ -1,6 +1,5 @@
 import { LinkIcon } from '@primer/octicons-react'
 import { Box, BranchName, Heading, Link } from '@primer/react'
-import React from 'react'
 
 export const Projects = () => {
   return (
