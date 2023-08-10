@@ -21,9 +21,44 @@
     @apply text-2xl;
   }
   a {
-    @apply text-indigo-500 underline;
+    @apply text-indigo-500 underline underline-offset-4;
   }
   p {
     @apply text-neutral-400 text-lg;
   }
+}
+
+/* svg background */
+:root {
+  --grain: url('/src/assets/grain.png');
+}
+#purple-ball {
+  overflow: hidden;
+  transform: translateZ(0);
+  position: absolute;
+  content: '';
+  z-index: -1;
+  top: 10%;
+  right: 0%;
+  height: 80%;
+  width: 100%;
+  mix-blend-mode: screen;
+  background: var(--grain),
+    radial-gradient(
+        circle farthest-corner at 0 0,
+        #000 30%,
+        theme('colors.indigo.300') 60%,
+        theme('colors.pink.400') 80%,
+        theme('colors.cyan.500') 110%
+      )
+      no-repeat,
+    radial-gradient(
+        closest-side at 60% 50%,
+        theme('colors.indigo.400') 20%,
+        #000 90%
+      )
+      no-repeat;
+  background-size: 140px, 100%, cover;
+  background-blend-mode: overlay;
+  opacity: 0.8;
 }
