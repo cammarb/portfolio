@@ -21,11 +21,11 @@ export default function Home() {
             </span>
           </p>
           <div className="flex flex-col gap-4 items-center sm:flex-row sm:items-start sm:gap-10">
-            <Link to={'projects/#web'}>
+            <Link to={'projects'}>
               <Button text={'Check out my web projects'} />
             </Link>
             <Link
-              to={'projects/#other-cool-stuff'}
+              to={'projects#other-cool-stuff'}
               className="text-white my-auto"
             >
               Other projects
