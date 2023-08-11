@@ -1,33 +1,27 @@
-import { Link as PrimerLink } from '@primer/react'
 import { Link } from 'react-router-dom'
-import { styled } from 'styled-components'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import { HiCode } from 'react-icons/hi'
+import { BsMusicNote } from 'react-icons/bs'
 
 export default function Navbar() {
-  const Nav = styled.nav`
-    display: flex;
-    justify-content: space-between;
-  `
-  const LinksContainer = styled.div`
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  `
   return (
     <>
-      <Nav>
-        <PrimerLink as={Link} to={'/'}>
-          cammarb.xyz
-        </PrimerLink>
-        <LinksContainer>
-          <PrimerLink as={Link} to={'https://github.com/cammarb'}>
-            <FaGithub />
-          </PrimerLink>
-          <PrimerLink as={Link} to={'https://linkedin.com/cammarb'}>
-            <FaLinkedin />
-          </PrimerLink>
-        </LinksContainer>
-      </Nav>
+      <nav className="py-3 mb-4 flex justify-between items-center">
+        <Link to={'/'} className="flex items-center gap-1">
+          <HiCode className="text-3xl" />
+        </Link>
+        <div className="flex gap-6">
+          <Link to={'https://github.com/cammarb'}>
+            <FaGithub className="text-neutral-50 text-xl" />
+          </Link>
+          <Link to={'https://linkedin.com/cammarb'}>
+            <FaLinkedin className="text-neutral-50 text-xl" />
+          </Link>
+          <Link to={'music'}>
+            <BsMusicNote className="text-neutral-50 text-xl" />
+          </Link>
+        </div>
+      </nav>
     </>
   )
 }

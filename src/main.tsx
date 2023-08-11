@@ -4,7 +4,6 @@ import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Root from './Root'
 import Home from './pages/Home'
-import { ThemeProvider, BaseStyles } from '@primer/react'
 import Music from './pages/Music'
 import ErrorPage from './pages/ErrorPage'
 import { Projects } from './pages/Projects'
@@ -33,10 +32,6 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <ThemeProvider colorMode="auto">
-      <BaseStyles>
-        <RouterProvider router={router} />
-      </BaseStyles>
-    </ThemeProvider>
+    <RouterProvider router={router} />
   </React.StrictMode>
 )

@@ -1,117 +1,86 @@
-import { LinkIcon } from '@primer/octicons-react'
-import { Box, BranchName, Heading, Link } from '@primer/react'
+import { Link } from 'react-router-dom'
+import Pill from '../components/Pill'
 
 export const Projects = () => {
   return (
     <>
-      <Box
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '3',
-        }}
-      >
-        <Heading sx={{ my: 3 }}>My projects</Heading>
-        <Box
-          sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '2',
-            p: 5,
-            borderWidth: 1,
-            borderStyle: 'solid',
-            borderColor: 'border.default',
-          }}
-        >
-          <Heading sx={{ fontSize: 2 }}> My portfolio</Heading>
-          <Link
-            href="https://github.com/cammarb/portfolio"
-            sx={{ display: 'flex', alignItems: 'center', gap: 2, my: 2 }}
-          >
-            <LinkIcon />
+      {/* Web */}
+      <div className="flex flex-col gap-3" id="web">
+        <h3 className="my-3 font-medium">Web projects</h3>
+        <div className="rounded flex flex-col gap-5 p-7 bg-neutral-800 bg-opacity-40">
+          <p> My portfolio</p>
+          <Link to="https://github.com/cammarb/portfolio" className="w-fit">
             Repository
           </Link>
-          <Box
-            sx={{
-              display: 'flex',
-              flexDirection: 'row',
-              gap: '2',
-            }}
-          >
-            <BranchName href="#">Typescript</BranchName>
-            <BranchName href="#">React + Vite</BranchName>
-          </Box>
-        </Box>
-        <Box
-          sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '2',
-            p: 5,
-            borderWidth: 1,
-            borderStyle: 'solid',
-            borderColor: 'border.default',
-          }}
-        >
-          <Heading sx={{ fontSize: 2 }}>Defendly</Heading>
-          <Link
-            href="https://defendly.de/"
-            sx={{ display: 'flex', alignItems: 'center', gap: 2, my: 2 }}
-          >
-            <LinkIcon />
+          <div className="flex gap-1">
+            <Pill language={'Typescript'}></Pill>
+            <Pill language={'React + Vite'}></Pill>
+          </div>
+        </div>
+        <div className="rounded flex flex-col gap-5 p-7 bg-neutral-800 bg-opacity-40">
+          <p>Defendly</p>
+          <Link to="https://defendly.de/" className="w-fit">
             Live Website
           </Link>
-          <Box
-            sx={{
-              display: 'flex',
-              flexDirection: 'row',
-              gap: '2',
-            }}
-          >
-            <BranchName href="#">Javascript</BranchName>
-            <BranchName href="#">React + Vite</BranchName>
-            <BranchName href="#">Express JS</BranchName>
-          </Box>
-        </Box>
-        <Box
-          sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '2',
-            p: 5,
-            borderWidth: 1,
-            borderStyle: 'solid',
-            borderColor: 'border.default',
-          }}
-        >
-          <Heading sx={{ fontSize: 2 }}>VS Code Shortcuts</Heading>
+          <div className="flex gap-1">
+            <Pill language={'Javascript'} />
+            <Pill language={'React + Vite'} />
+            <Pill language={'React Redux'} />
+            <Pill language={'JWT'} />
+            <Pill language={'Python Flask'} />
+          </div>
+        </div>
+        <div className="rounded flex flex-col gap-5 p-7 bg-neutral-800 bg-opacity-40">
+          <p>VS Code Shortcuts</p>
           <Link
-            href="https://github.com/cammarb/VSCodeShortcuts.git"
-            sx={{ display: 'flex', alignItems: 'center', gap: 2, my: 2 }}
+            to="https://github.com/cammarb/VSCodeShortcuts.git"
+            className="w-fit"
           >
-            <LinkIcon />
             Repository
           </Link>
-          <Link
-            href="https://vscodeshortcuts.pages.dev/"
-            sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 2 }}
-          >
-            <LinkIcon />
+          <Link to="https://vscodeshortcuts.pages.dev/" className="w-fit">
             Live Website
           </Link>
-          <Box
-            sx={{
-              display: 'flex',
-              flexDirection: 'row',
-              gap: '2',
-            }}
-          >
-            <BranchName href="#">Javascript</BranchName>
-            <BranchName href="#">React + Vite</BranchName>
-            <BranchName href="#">Express JS</BranchName>
-          </Box>
-        </Box>
-      </Box>
+          <div className="flex gap-1">
+            <Pill language={'Javascript'} />
+            <Pill language={'React + Vite'} />
+          </div>
+        </div>
+      </div>
+
+      {/* Other projects */}
+      <div className="flex flex-col gap-3" id="other-cool-stuff">
+        <h3 className="my-3 font-medium">Other cool stuff I've made</h3>
+        <div className="rounded flex flex-col gap-5 p-7 bg-neutral-800 bg-opacity-40">
+          <p>Miley Cyrus API</p>
+          <Link to="https://github.com/cammarb/miley-api" className="w-fit">
+            Repository
+          </Link>
+          <div className="flex gap-1">
+            <Pill language={'Python Flask'}></Pill>
+          </div>
+        </div>
+        <div className="rounded flex flex-col gap-5 p-7 bg-neutral-800 bg-opacity-40">
+          <p>Dua Lipa - Discord Bot</p>
+          <Link to="https://github.com/cammarb/dualipa_bot" className="w-fit">
+            Repository
+          </Link>
+          <div className="flex gap-1">
+            <Pill language={'Python'} />
+            <Pill language={'Discord API'} />
+          </div>
+        </div>
+        <div className="rounded flex flex-col gap-5 p-7 bg-neutral-800 bg-opacity-40">
+          <p>Pomopeep - Pomodoro timer CLI</p>
+          <Link to="https://github.com/cammarb/pomopeep" className="w-fit">
+            Repository
+          </Link>
+
+          <div className="flex gap-1">
+            <Pill language={'Python'} />
+          </div>
+        </div>
+      </div>
     </>
   )
 }

@@ -1,137 +1,41 @@
-import { BranchName, Box, Heading, Avatar, Link } from '@primer/react'
-import image from '../assets/profile.png'
-import { LinkIcon } from '@primer/octicons-react'
+import { Link } from 'react-router-dom'
+import Button from '../components/Button'
+import profile from '../assets/IMG_0152.png'
 
 export default function Home() {
   return (
     <>
-      <Box
-        sx={{
-          display: 'flex',
-          m: 5,
-          alignContent: 'center',
-        }}
+      <div
+        id="heading"
+        className="w-full min-h-[80vh] flex flex-col gap-8 justify-center overflow-hidden md:flex-row"
       >
-        <Avatar src={image} size={200} />
-        <Box
-          sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            m: 5,
-          }}
-        >
-          <Heading>Hey, I'm Camila 👋</Heading>
-          <Heading sx={{ fontSize: 4, mb: 3 }}>
-            and I'm a Web Developer.
-          </Heading>
-          <Heading sx={{ fontSize: 2 }}>Currently 📍 Berlin</Heading>
-        </Box>
-      </Box>
-      <Box
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          borderWidth: 1,
-          borderStyle: 'solid',
-          borderColor: 'border.default',
-          py: 3,
-          px: 5,
-        }}
-      >
-        <p>Technologies and programming languages:</p>
-        <Box
-          sx={{
-            display: 'flex',
-            flexDirection: 'row',
-            gap: '2',
-            pb: 4,
-          }}
-        >
-          <BranchName href="#">Javascript</BranchName>
-          <BranchName href="#">Typescript</BranchName>
-          <BranchName href="#">React</BranchName>
-          <BranchName href="#">Express</BranchName>
-          <BranchName href="#">Python</BranchName>
-          <BranchName href="#">Flask</BranchName>
-          <BranchName href="#">C#</BranchName>
-        </Box>
-      </Box>
-      <Box
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 4,
-          py: 6,
-        }}
-      >
-        <Heading sx={{ fontSize: 4, my: 3 }}>
-          Projects I'm currently working on:
-        </Heading>
-        <Box
-          sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '2',
-            p: 5,
-            borderWidth: 1,
-            borderStyle: 'solid',
-            borderColor: 'border.default',
-          }}
-        >
-          <Heading sx={{ fontSize: 2 }}> My portfolio</Heading>
-          <Link
-            href="https://github.com/cammarb/portfolio"
-            sx={{ display: 'flex', alignItems: 'center', gap: 2, my: 2 }}
-          >
-            <LinkIcon />
-            Repository
-          </Link>
-          <Box
-            sx={{
-              display: 'flex',
-              flexDirection: 'row',
-              gap: '2',
-            }}
-          >
-            <BranchName href="#">Typescript</BranchName>
-            <BranchName href="#">React + Vite</BranchName>
-          </Box>
-        </Box>
-        <Box
-          sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '2',
-            p: 5,
-            borderWidth: 1,
-            borderStyle: 'solid',
-            borderColor: 'border.default',
-          }}
-        >
-          <Heading sx={{ fontSize: 2 }}>Defendly</Heading>
-          <Link
-            href="https://defendly.de/"
-            sx={{ display: 'flex', alignItems: 'center', gap: 2, my: 2 }}
-          >
-            <LinkIcon />
-            Landing Page
-          </Link>
-          <Box
-            sx={{
-              display: 'flex',
-              flexDirection: 'row',
-              gap: '2',
-            }}
-          >
-            <BranchName href="#">Javascript</BranchName>
-            <BranchName href="#">React + Vite</BranchName>
-            <BranchName href="#">Express JS</BranchName>
-          </Box>
-        </Box>
-        <Link href="/projects" sx={{ textAlign: 'center' }}>
-          See more
-        </Link>
-      </Box>
+        <span id="purple-ball" />
+        <div className="mx-auto mt-10 flex flex-col justify-center gap-8">
+          <h1>Hey, I'm Camila</h1>
+          <p className="text-2xl my-5">
+            I'm a full-stack developer and tech enthusiast. <br />
+            Sometimes I make music, you can check it out{' '}
+            <Link to={'music'}>here</Link>. <br />
+            <span className="text-neutral-200 text-xl">
+              Currently working in IT in Berlin.
+            </span>
+          </p>
+          <div className="flex flex-col gap-4 items-center sm:flex-row sm:items-start sm:gap-10">
+            <Link to={'projects'}>
+              <Button text={'Check out my web projects'} />
+            </Link>
+            <Link
+              to={'projects#other-cool-stuff'}
+              className="text-white my-auto"
+            >
+              Other projects
+            </Link>
+          </div>
+        </div>
+        <div className="mx-auto md:w-[40%] flex flex-col justify-center">
+          <img src={profile} alt="profile" className="max-w-md rounded-lg" />
+        </div>
+      </div>
     </>
   )
 }
