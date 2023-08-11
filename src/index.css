@@ -27,6 +27,9 @@
     @apply text-neutral-400 text-lg;
   }
 }
+html {
+  scroll-behavior: smooth;
+}
 
 /* svg background */
 :root {
