@@ -24,7 +24,7 @@
     @apply text-indigo-500 underline underline-offset-4;
   }
   p {
-    @apply text-neutral-400 text-lg;
+    @apply text-neutral-200 text-lg;
   }
 }
 html {
@@ -63,5 +63,5 @@ html {
       no-repeat;
   background-size: 140px, 100%, cover;
   background-blend-mode: overlay;
-  opacity: 0.8;
+  opacity: 0.2;
 }

@@ -22,7 +22,7 @@ export const Projects = () => {
           <Link to="https://defendly.de/" className="w-fit">
             Live Website
           </Link>
-          <div className="flex gap-1">
+          <div className="flex gap-1 flex-wrap">
             <Pill language={'Javascript'} />
             <Pill language={'React + Vite'} />
             <Pill language={'React Redux'} />
