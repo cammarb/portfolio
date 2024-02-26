@@ -1,85 +1,120 @@
 import { Link } from 'react-router-dom'
 import Pill from '../components/Pill'
 
+interface Project {
+  name: string
+  repo?: string
+  website?: string
+  technologies: string[]
+}
+
+const webProjects: Project[] = [
+  {
+    name: 'Hackin2',
+    website: 'https://hackin2.com',
+    technologies: ['Typescript', 'React', 'Redux'],
+  },
+  {
+    name: 'My Portfolio',
+    repo: 'https://github.com/cammarb/portfolio',
+    technologies: ['Typescript', 'React'],
+  },
+  {
+    name: 'Defendly',
+    website: 'https://defendly.de/',
+    technologies: ['Javascript', 'React', 'Redux'],
+  },
+  {
+    name: 'VS Code Shortcuts',
+    repo: 'https://github.com/cammarb/VSCodeShortcuts.git',
+    website: 'https://vscodeshortcuts.pages.dev/',
+    technologies: ['Javascript', 'React'],
+  },
+]
+
+const otherProjects: Project[] = [
+  {
+    name: 'Miley Cyrus API',
+    repo: 'https://github.com/cammarb/miley-api',
+    technologies: ['Python', 'Flask'],
+  },
+  {
+    name: 'Dua Lipa - Discord Bot',
+    repo: 'https://github.com/cammarb/dualipa_bot',
+    technologies: ['Python', 'Discord API'],
+  },
+  {
+    name: 'Pomopeep - Pomodoro timer CLI',
+    repo: 'https://github.com/cammarb/pomopeep',
+    technologies: ['Python'],
+  },
+]
+
 export const Projects = () => {
   return (
     <>
       {/* Web */}
       <div className="flex flex-col gap-3" id="web">
         <h3 className="my-3 font-medium">Web projects</h3>
-        <div className="rounded flex flex-col gap-5 p-7 bg-neutral-800 bg-opacity-40">
-          <p> My portfolio</p>
-          <Link to="https://github.com/cammarb/portfolio" className="w-fit">
-            Repository
-          </Link>
-          <div className="flex gap-1">
-            <Pill language={'Typescript'}></Pill>
-            <Pill language={'React + Vite'}></Pill>
-          </div>
-        </div>
-        <div className="rounded flex flex-col gap-5 p-7 bg-neutral-800 bg-opacity-40">
-          <p>Defendly</p>
-          <Link to="https://defendly.de/" className="w-fit">
-            Live Website
-          </Link>
-          <div className="flex gap-1 flex-wrap">
-            <Pill language={'Javascript'} />
-            <Pill language={'React + Vite'} />
-            <Pill language={'React Redux'} />
-            <Pill language={'JWT'} />
-            <Pill language={'Python Flask'} />
-          </div>
-        </div>
-        <div className="rounded flex flex-col gap-5 p-7 bg-neutral-800 bg-opacity-40">
-          <p>VS Code Shortcuts</p>
-          <Link
-            to="https://github.com/cammarb/VSCodeShortcuts.git"
-            className="w-fit"
+        {webProjects.map((project, index) => (
+          <div
+            key={index}
+            className="flex flex-col gap-5 rounded p-7 bg-neutral-800 bg-opacity-40"
           >
-            Repository
-          </Link>
-          <Link to="https://vscodeshortcuts.pages.dev/" className="w-fit">
-            Live Website
-          </Link>
-          <div className="flex gap-1">
-            <Pill language={'Javascript'} />
-            <Pill language={'React + Vite'} />
+            <p>{project.name}</p>
+            {project.repo ? (
+              <Link to={project.repo} className="w-fit">
+                Repository
+              </Link>
+            ) : (
+              <></>
+            )}
+            {project.website ? (
+              <Link to={project.website} className="w-fit">
+                Live Website
+              </Link>
+            ) : (
+              <></>
+            )}
+            <div className="flex gap-1">
+              {project.technologies.map((technology, index) => (
+                <Pill key={index} language={technology}></Pill>
+              ))}
+            </div>
           </div>
-        </div>
+        ))}
       </div>
 
       {/* Other projects */}
       <div className="flex flex-col gap-3" id="other-cool-stuff">
         <h3 className="my-3 font-medium">Other cool stuff I've made</h3>
-        <div className="rounded flex flex-col gap-5 p-7 bg-neutral-800 bg-opacity-40">
-          <p>Miley Cyrus API</p>
-          <Link to="https://github.com/cammarb/miley-api" className="w-fit">
-            Repository
-          </Link>
-          <div className="flex gap-1">
-            <Pill language={'Python Flask'}></Pill>
+        {otherProjects.map((project, index) => (
+          <div
+            key={index}
+            className="flex flex-col gap-5 rounded p-7 bg-neutral-800 bg-opacity-40"
+          >
+            <p>{project.name}</p>
+            {project.repo ? (
+              <Link to={project.repo} className="w-fit">
+                Repository
+              </Link>
+            ) : (
+              <></>
+            )}
+            {project.website ? (
+              <Link to={project.website} className="w-fit">
+                Live Website
+              </Link>
+            ) : (
+              <></>
+            )}
+            <div className="flex gap-1">
+              {project.technologies.map((technology, index) => (
+                <Pill key={index} language={technology}></Pill>
+              ))}
+            </div>
           </div>
-        </div>
-        <div className="rounded flex flex-col gap-5 p-7 bg-neutral-800 bg-opacity-40">
-          <p>Dua Lipa - Discord Bot</p>
-          <Link to="https://github.com/cammarb/dualipa_bot" className="w-fit">
-            Repository
-          </Link>
-          <div className="flex gap-1">
-            <Pill language={'Python'} />
-            <Pill language={'Discord API'} />
-          </div>
-        </div>
-        <div className="rounded flex flex-col gap-5 p-7 bg-neutral-800 bg-opacity-40">
-          <p>Pomopeep - Pomodoro timer CLI</p>
-          <Link to="https://github.com/cammarb/pomopeep" className="w-fit">
-            Repository
-          </Link>
-
-          <div className="flex gap-1">
-            <Pill language={'Python'} />
-          </div>
-        </div>
+        ))}
       </div>
     </>
   )
