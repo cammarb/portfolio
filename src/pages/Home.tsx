@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import Button from '../components/Button'
-import profile from '../assets/IMG_0152.png'
 
 export default function Home() {
   return (
@@ -32,9 +31,6 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        {/* <div className="mx-auto md:w-[40%] flex flex-col justify-center">
-          <img src={profile} alt="profile" className="max-w-md rounded-lg" />
-        </div> */}
       </div>
     </>
   )
