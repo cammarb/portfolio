@@ -1,5 +1,5 @@
 type Props = {
-  language: String
+  language: string
 }
 
 const Pill = ({ language }: Props) => {
