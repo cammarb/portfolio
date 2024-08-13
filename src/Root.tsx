@@ -1,13 +1,13 @@
-import { Outlet } from 'react-router-dom'
-import Navbar from './components/Navbar'
-import Footer from './components/Footer'
+import { Outlet } from "react-router-dom";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 
 export default function Root() {
   return (
-    <>
-      <Navbar />
+    <div className="max-w-5xl mx-auto">
+      <Header />
       <Outlet />
       <Footer />
-    </>
-  )
+    </div>
+  );
 }

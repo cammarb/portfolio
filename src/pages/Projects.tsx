@@ -1,121 +1,53 @@
-import { Link } from 'react-router-dom'
-import Pill from '../components/Pill'
+import { Button } from "@/components/ui/button";
+import { ArrowLeft } from "lucide-react";
+import { Link } from "react-router-dom";
 
-interface Project {
-  name: string
-  repo?: string
-  website?: string
-  technologies: string[]
-}
-
-const webProjects: Project[] = [
-  {
-    name: 'Hackin2',
-    website: 'https://hackin2.com',
-    technologies: ['Typescript', 'React', 'Redux'],
+const projects = [
+  { 
+    name: 'Hackin2 - Bounty Platform for physical pentesters',
+     stack: 'Typescript - ExpressJS, React, PostgreSQL, Redis'
   },
-  {
-    name: 'My Portfolio',
-    repo: 'https://github.com/cammarb/portfolio',
-    technologies: ['Typescript', 'React'],
+  { 
+    name: 'Reserve Sonic - Booking Platform for rehearsal rooms / music studios',
+     stack: 'Java - Spring Boot, PostgreSQL, HTML, CSS, Javascript'
   },
-  {
-    name: 'Defendly',
-    website: 'https://defendly.de/',
-    technologies: ['Javascript', 'React', 'Redux'],
-  },
-  {
-    name: 'VS Code Shortcuts',
-    repo: 'https://github.com/cammarb/VSCodeShortcuts.git',
-    website: 'https://vscodeshortcuts.pages.dev/',
-    technologies: ['Javascript', 'React'],
-  },
-]
-
-const otherProjects: Project[] = [
-  {
+  { 
     name: 'Miley Cyrus API',
-    repo: 'https://github.com/cammarb/miley-api',
-    technologies: ['Python', 'Flask'],
+     stack: 'Python - Flask, PostgreSQL, HTML, CSS, Javascript'
   },
-  {
-    name: 'Dua Lipa - Discord Bot',
-    repo: 'https://github.com/cammarb/dualipa_bot',
-    technologies: ['Python', 'Discord API'],
-  },
-  {
-    name: 'Pomopeep - Pomodoro timer CLI',
-    repo: 'https://github.com/cammarb/pomopeep',
-    technologies: ['Python'],
+  { 
+    name: 'Dua Lipa Discord Bot',
+     stack: 'Python - Discord API, Google Custom Search API'
   },
 ]
 
 export const Projects = () => {
   return (
     <>
-      {/* Web */}
-      <div className="flex flex-col gap-3" id="web">
-        <h3 className="my-3 font-medium">Web projects</h3>
-        {webProjects.map((project, index) => (
-          <div
-            key={index}
-            className="flex flex-col gap-5 rounded p-7 bg-neutral-800 bg-opacity-40"
-          >
-            <p>{project.name}</p>
-            {project.repo ? (
-              <Link to={project.repo} className="w-fit">
-                Repository
-              </Link>
-            ) : (
-              <></>
-            )}
-            {project.website ? (
-              <Link to={project.website} className="w-fit">
-                Live Website
-              </Link>
-            ) : (
-              <></>
-            )}
-            <div className="flex gap-1">
-              {project.technologies.map((technology, index) => (
-                <Pill key={index} language={technology}></Pill>
-              ))}
-            </div>
+      <div className="mx-6 my-16">
+        <div className="my-6">
+          <Button asChild>
+            <Link to={"/"} className="flex gap-2">
+              <ArrowLeft size={13} />
+              Back
+            </Link>
+          </Button>
+          <div className="my-8 flex flex-col gap-2">
+            <h1 className="text-2xl">Projects</h1>
+            <p>Some projects I've worked / I'm working on</p>
           </div>
-        ))}
-      </div>
-
-      {/* Other projects */}
-      <div className="flex flex-col gap-3" id="other-cool-stuff">
-        <h3 className="my-3 font-medium">Other cool stuff I've made</h3>
-        {otherProjects.map((project, index) => (
-          <div
-            key={index}
-            className="flex flex-col gap-5 rounded p-7 bg-neutral-800 bg-opacity-40"
-          >
-            <p>{project.name}</p>
-            {project.repo ? (
-              <Link to={project.repo} className="w-fit">
-                Repository
-              </Link>
-            ) : (
-              <></>
-            )}
-            {project.website ? (
-              <Link to={project.website} className="w-fit">
-                Live Website
-              </Link>
-            ) : (
-              <></>
-            )}
-            <div className="flex gap-1">
-              {project.technologies.map((technology, index) => (
-                <Pill key={index} language={technology}></Pill>
-              ))}
-            </div>
+        </div>
+        <main>
+          <div className="flex flex-col gap-4">
+            {projects.map((project)=>(
+              <div>
+                <p>{project.name}</p>
+                <p className="text-sm">{project.stack}</p>
+              </div>
+            ))}
           </div>
-        ))}
+        </main>
       </div>
     </>
-  )
-}
+  );
+};

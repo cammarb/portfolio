@@ -1,37 +1,49 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import './index.css'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import Root from './Root'
-import Home from './pages/Home'
-import Music from './pages/Music'
-import ErrorPage from './pages/ErrorPage'
-import { Projects } from './pages/Projects'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import { ThemeProvider } from "./components/theme-provider.tsx";
+import Root from "./Root.tsx";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./pages/Home.tsx";
+import { Music } from "./pages/Music.tsx";
+import { Blog } from "./pages/Blog.tsx";
+import { Tools } from "./pages/Tools.tsx";
+import { Projects } from "./pages/Projects.tsx";
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <Root />,
-    errorElement: <ErrorPage />,
+    // errorElement: <ErrorPage />,
     children: [
       {
         element: <Home />,
         index: true,
       },
       {
-        element: <Music />,
-        path: 'music',
+        element: <Projects />,
+        path: "projects",
       },
       {
-        element: <Projects />,
-        path: 'projects',
+        element: <Blog />,
+        path: "blog",
+      },
+      {
+        element: <Tools />,
+        path: "tools",
+      },
+      {
+        element: <Music />,
+        path: "music",
       },
     ],
   },
-])
+]);
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ThemeProvider>
+      <RouterProvider router={router} />
+    </ThemeProvider>
   </React.StrictMode>
-)
+);
