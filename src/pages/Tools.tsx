@@ -17,20 +17,18 @@ type ToolsList = {
 const list: ToolsList[] =[ {
   name: 'Software',
   list: [
-    'Ubuntu WSL2',
     'VSCode',
     'Neovim',
+    'IntelliJ IDEA',
     'Windows Terminal',
-    'Warp Terminal',
-    'Postman',
-    'Docker'
+    'Ghostty',
   ]
 },
 {
   name: 'Hardware',
   list: [
     'Logitech MX 3 Master',
-    'SK64S keybooard',
+    'Keychron V4 Max',
     'Focusrite 2i2 2nd Gen',
     'Audiotechnica AT2020'
   ]
@@ -71,7 +69,7 @@ export const Tools = () => {
           <div className="my-8 flex flex-col gap-2">
             <h1 className="text-2xl">Tools</h1>
             <p>Hardware and software I currently use</p>
-            <p>You can check my dotfiles <Link to={'https://github.com/cammarb'} className="underline underline-offset-4 font-bold">here</Link></p>
+            <p>You can check my dotfiles <Link to={'https://github.com/cammarb/dotfiles'} className="underline underline-offset-4 font-bold">here</Link></p>
           </div>
         </div>
         <main>

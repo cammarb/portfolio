@@ -9,7 +9,7 @@ export default function Home() {
         className="w-full min-h-[80vh] flex flex-col gap-8 justify-center overflow-hidden md:flex-row"
       >
         <span id="purple-ball" />
-        <div className="flex flex-col justify-center gap-8 mx-auto mt-10">
+        <div className="flex flex-col justify-center gap-8 mx-6 sm:mx-auto mt-10">
           <h1 className="text-xl">Hey, I'm Camila</h1>
           <p className="my-5 text-2xl">
             I'm a full-stack developer and tech enthusiast. <br />
