@@ -12,7 +12,7 @@ export default function Home() {
         <div className="flex flex-col justify-center gap-8 mx-6 sm:mx-auto mt-10">
           <h1 className="text-xl">Hey, I'm Camila</h1>
           <p className="my-5 text-2xl">
-            I'm a full-stack developer and tech enthusiast. <br />
+            I'm a software developer and tech enthusiast. <br />
             Sometimes I make music, you can check it out{" "}
             <Link to={"music"} className="font-bold underline underline-offset-4">here</Link>. <br />
             <span className="text-lg">Currently working in Berlin.</span>
