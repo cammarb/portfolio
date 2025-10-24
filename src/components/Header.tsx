@@ -12,7 +12,7 @@ const links = [
 export const Header = () => {
   return (
     <nav className="py-3 my-4 mx-6 flex justify-between sm:items-center">
-      <div className="flex gap-3 sm:items-center">  
+      <div className="flex gap-3 sm:items-center">
         <ModeToggle />
         <Link to={"/"} className="flex gap-1 pt-1 sm:pt-0">
           cammarb
@@ -22,7 +22,6 @@ export const Header = () => {
         <div className="flex gap-6 items-center">
           <Link to={"projects"} className="ml-4">Projects</Link>
           <Link to={"blog"}>Blog</Link>
-          <Link to={"tools"}>Tools</Link>
         </div>
         <div className="flex gap-4 sm:gap-6">
           {links.map((link) => (
