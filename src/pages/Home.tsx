@@ -12,7 +12,7 @@ export default function Home() {
         <div className="flex flex-col justify-center gap-8 mx-6 sm:mx-auto mt-10">
           <h1 className="text-xl">Hey, I'm Camila</h1>
           <p className="mt-5 text-2xl">
-            I'm a software engineer and tech enthusiast.
+            Hi, I'm Camila. I'm a Software Engineer and I'm a tech enthuthiast.
           </p>
           <p className="mb-5 text-xl">
             Sometimes I make music, you can check it out{" "}
