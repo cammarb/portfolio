@@ -8,6 +8,7 @@ import Home from "./pages/Home.tsx";
 import { Music } from "./pages/Music.tsx";
 import { Blog } from "./pages/Blog.tsx";
 import { Projects } from "./pages/Projects.tsx";
+import { AboutMe } from "./pages/AboutMe.tsx";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         element: <Home />,
         index: true,
+      },
+      {
+        element: <AboutMe />,
+        path: "about-me",
       },
       {
         element: <Projects />,
