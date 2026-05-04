@@ -11,7 +11,7 @@ export const Footer = () => {
   return (
     <>
       <footer className="py-4 text-center">
-        <div className="flex gap-4">
+        <div className="justify-center flex gap-4 mb-4">
           {links.map((link) => (
             <NavLinks to={link.to} icon={link.icon} />
           ))}
