@@ -25,7 +25,7 @@ export const Blog = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await fetch('${blogAPI}/entries');
+        const response = await fetch(`${blogAPI}/entries`);
         const data = await response.json();
         setBlogEntries(data);
       } catch (error) {
