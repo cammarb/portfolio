@@ -5,19 +5,27 @@ import { Link } from "react-router-dom";
 const projects = [
   { 
     name: 'Hackin2 - Bounty Platform for physical pentesters',
-     stack: 'Typescript - ExpressJS, React, PostgreSQL, Redis'
+    stack: 'Typescript - ExpressJS, React, PostgreSQL, Redis'
   },
   { 
     name: 'Reserve Sonic - Booking Platform for rehearsal rooms / music studios',
-     stack: 'Java - Spring Boot, PostgreSQL, HTML, CSS, Javascript'
+    stack: 'Java - Spring Boot, PostgreSQL, HTML, CSS, Javascript'
+  },
+  { 
+    name: 'Portfolio (this website)',
+    stack: 'Typescript - React'
   },
   { 
     name: 'Miley Cyrus API',
-     stack: 'Python - Flask, PostgreSQL, HTML, CSS, Javascript'
+    stack: 'Python - Flask, PostgreSQL, HTML, CSS, Javascript'
+  },
+  { 
+    name: 'Ping Pong - Telegram Bot',
+    stack: 'Python, Openmeteo API, Telegram Bot'
   },
   { 
     name: 'Dua Lipa Discord Bot',
-     stack: 'Python - Discord API, Google Custom Search API'
+    stack: 'Python - Discord API, Google Custom Search API'
   },
 ]
 
@@ -34,7 +42,7 @@ export const Projects = () => {
           </Button>
           <div className="my-8 flex flex-col gap-2">
             <h1 className="text-2xl">Projects</h1>
-            <p>Some projects I've worked / I'm working on</p>
+            <p>Some projects I've worked / I'm working on for uni and for fun :)</p>
           </div>
         </div>
         <main>
