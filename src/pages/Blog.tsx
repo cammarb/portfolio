@@ -4,15 +4,24 @@ import { Link } from "react-router-dom";
 import { useState, useEffect, useRef } from 'react';
 import { blogAPI } from '@/main';
 
+interface Blogs {
+  [key: string]: SingleBlog;
+}
+
+interface SingleBlog {
+  id: string,
+  title: string,
+  createdDate: string,
+}
+
 export const Blog = () => {
-  const [blogEntries, setBlogEntries] = useState([]);
+  const [blogEntries, setBlogEntries] = useState<SingleBlog[]>([]);
 
-  const prefetchCache = useRef({});
+  const prefetchCache = useRef<Blogs>({});
 
-  const handlePrefetch = async (id) => {
-    if (prefetchCache.current[id]) return;
-
+  const handlePrefetch = async (id: string) => {
     try {
+      if (prefetchCache.current[id]) return;
       const response = await fetch(`${blogAPI}/entries/${id}`);
       const data = await response.json();
       prefetchCache.current[id] = data;
