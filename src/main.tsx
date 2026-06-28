@@ -11,7 +11,7 @@ import { BlogEntry } from "./pages/BlogEntry.tsx";
 import { Projects } from "./pages/Projects.tsx";
 import { AboutMe } from "./pages/AboutMe.tsx";
 
-export const blogAPI = process.env.BLOG_API;
+export const blogAPI: String | null = import.meta.env.BLOG_API;
 
 const router = createBrowserRouter([
   {
